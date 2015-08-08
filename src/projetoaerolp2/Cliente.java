@@ -10,7 +10,7 @@ import java.beans.PropertyChangeSupport;
 
 /**
  *
- * @author Logan carvalho
+ * @author Logan CARVALHO
  */
 public class Cliente {
     
