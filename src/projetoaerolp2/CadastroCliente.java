@@ -6,18 +6,21 @@
 package projetoaerolp2;
 
 import java.util.LinkedList;
+import java.sql.*;
+import DAL.ConectBd;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-/**
- *
- * @author Logan
- */
 public class CadastroCliente extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CadastroCliente
-     */
-    public CadastroCliente() {
+    Connection con = null;
+    PreparedStatement pst = null;
+    ResultSet rs = null;
+    
+    public CadastroCliente() throws ClassNotFoundException {
         initComponents();
+        this.setLocationRelativeTo(null);
+        con = ConectBd.conectbd();
     }
 
     /**
@@ -136,7 +139,11 @@ public class CadastroCliente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroCliente().setVisible(true);
+                try {
+                    new CadastroCliente().setVisible(true);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(CadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
