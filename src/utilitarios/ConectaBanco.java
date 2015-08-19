@@ -16,9 +16,9 @@ public class ConectaBanco {
  public Statement stm;//reponsável por preparar e realizar pesquisas no BD
  public ResultSet rs;//reponsável por armazenar o resultado de uma pesquisa passada para o statement
  private final  String driver = "org.postgresql.Driver";//responsavel por identificar o serviço de banco de dados
- private final  String caminho = "jdbc:postgresql://localhost:5432/bd_ProjectAero";//responsável por atribuir o local do BD. java database connection do tipo postgre
+ private final  String caminho = "jdbc:postgresql://localhost:5432/lp2";//responsável por atribuir o local do BD. java database connection do tipo postgre
  private final String usuario= "postgres";//configurados durante a instalação do banco
- private final String senha = "L@gan1346";
+ private final String senha = "superb17";
  public Connection conn;//responsável por realizar a conecção com o BD
     
     
@@ -36,6 +36,7 @@ public class ConectaBanco {
  public void desconectar(){//Método para fechar a conexão com o BD
      try {
          conn.close();
+         JOptionPane.showMessageDialog(null,"Desconectado com Sucesso");//Imprime caixa de mensagem 
      } catch (SQLException ex) {
            JOptionPane.showMessageDialog(null," Erro ao fechar a conexão\n Erro"+ ex.getMessage() );
      }

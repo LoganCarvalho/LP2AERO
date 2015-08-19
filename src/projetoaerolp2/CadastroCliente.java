@@ -16,8 +16,7 @@ import utilitarios.ConectaBanco;
 
 public class CadastroCliente extends javax.swing.JFrame {
     ConectaBanco conexao = new ConectaBanco();//variavel global
-    
-    
+   
     public CadastroCliente() throws ClassNotFoundException {
         initComponents();
         //this.setLocationRelativeTo(null);
@@ -38,6 +37,7 @@ public class CadastroCliente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Clientes");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         lblNome.setText("Nome");
 
@@ -91,6 +91,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
@@ -100,9 +101,9 @@ public class CadastroCliente extends javax.swing.JFrame {
     private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed
         
         try {
-            PreparedStatement pst = conexao.conn.prepareStatement("insert into lp2.cliente(nome,cpf) values(?,?)");
+            PreparedStatement pst = conexao.conn.prepareStatement("insert into cliente(nome,cpf) values(?,?)");
             pst.setString(1, txtNome.getText());
-            pst.setString(2, txtCPF.getText());
+            pst.setInt(2, Integer.parseInt(txtCPF.getText()));
             pst.executeUpdate();
             JOptionPane.showMessageDialog(rootPane,"Cliente Cadastrado");//Imprime caixa de mensagem 
         } catch (SQLException ex) {

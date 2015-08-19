@@ -5,6 +5,9 @@
  */
 package interfaces;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import projetoaerolp2.CadastroCliente;
 import utilitarios.ConectaBanco;
 
 /**
@@ -47,6 +50,16 @@ public class TelaInicial extends javax.swing.JFrame {
         jMenu1.setText("Cadastrar");
 
         jMenuItem1.setText("Cliente");
+        jMenuItem1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuItem1MouseClicked(evt);
+            }
+        });
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setText("Aeronave");
@@ -117,6 +130,22 @@ public class TelaInicial extends javax.swing.JFrame {
         conexao.desconectar();
         System.exit(0);
     }//GEN-LAST:event_jMenu4MouseClicked
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+   // TODO add your handling code here:
+        CadastroCliente cadcli = null;
+        try {
+            cadcli = new CadastroCliente();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        cadcli.setVisible(true);        
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MouseClicked
+     
+    }//GEN-LAST:event_jMenuItem1MouseClicked
 
     public static void main(String args[]) {
          java.awt.EventQueue.invokeLater(new Runnable() {
