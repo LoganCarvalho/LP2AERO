@@ -99,24 +99,34 @@ public class CadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNomeActionPerformed
 
     private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed
-        
+        //Cliente cli = new Cliente();
         try {
             PreparedStatement pst = conexao.conn.prepareStatement("insert into cliente(nome,cpf) values(?,?)");
             pst.setString(1, txtNome.getText());
-            pst.setInt(2, Integer.parseInt(txtCPF.getText()));
+            pst.setString(2, txtCPF.getText());
+            //cli = ColetarDadosClienteTela();
+           // pst.setObject(1, cli);
+            
             pst.executeUpdate();
             JOptionPane.showMessageDialog(rootPane,"Cliente Cadastrado");//Imprime caixa de mensagem 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(rootPane,"Erro na hora de inserir. Tente Novamente!\n Erro" +ex);//Imprime caixa de mensagem 
         }
         
-        //Cliente cli = new Cliente();
-        //lstClientes.add(cli);
-        //txtNome.setText("");
-        //txtCPF.setText("");
+        
         //txtNome.requestFocus();
     }//GEN-LAST:event_btnCadastroActionPerformed
-
+    
+    //Metodo que coleta a informação do popUp de cliente(Seguir Padrão)
+    private Cliente ColetarDadosClienteTela(){
+       
+        Cliente cli = new Cliente();
+        cli.setNome(txtNome.getText());
+        cli.setCPF(txtCPF.getText());
+        
+        
+        return cli;
+    }
     
     /**
      * @param args the command line arguments
