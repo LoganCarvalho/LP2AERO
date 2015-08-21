@@ -28,85 +28,85 @@ public class TelaInicial extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
+        jmCadastrar = new javax.swing.JMenu();
+        jmCadastrarCliente = new javax.swing.JMenuItem();
+        jmCadastrarAeronave = new javax.swing.JMenuItem();
+        jmCadastrarVoo = new javax.swing.JMenuItem();
+        jmCadastrarProgDatas = new javax.swing.JMenuItem();
+        jmConsultar = new javax.swing.JMenu();
+        jmConsultarVoo = new javax.swing.JMenuItem();
+        jmConsultarSaldoPontos = new javax.swing.JMenuItem();
+        jmPassagem = new javax.swing.JMenu();
+        jmPassagemVender = new javax.swing.JMenuItem();
+        jmPassagemEmitir = new javax.swing.JMenuItem();
+        jmPassagemCancelar = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
+        jmSobreCia = new javax.swing.JMenu();
+        jmSair = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SISTEMA COMPANHIA AÉREA");
 
-        jMenu1.setText("Cadastrar");
+        jmCadastrar.setText("Cadastrar");
 
-        jMenuItem1.setText("Cliente");
-        jMenuItem1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jmCadastrarCliente.setText("Cliente");
+        jmCadastrarCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenuItem1MouseClicked(evt);
+                jmCadastrarClienteMouseClicked(evt);
             }
         });
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jmCadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jmCadastrarClienteActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jmCadastrar.add(jmCadastrarCliente);
 
-        jMenuItem2.setText("Aeronave");
-        jMenu1.add(jMenuItem2);
+        jmCadastrarAeronave.setText("Aeronave");
+        jmCadastrar.add(jmCadastrarAeronave);
 
-        jMenuItem3.setText("Voo");
-        jMenu1.add(jMenuItem3);
+        jmCadastrarVoo.setText("Voo");
+        jmCadastrar.add(jmCadastrarVoo);
 
-        jMenuItem4.setText("Programação de Datas");
-        jMenu1.add(jMenuItem4);
+        jmCadastrarProgDatas.setText("Programação de Datas");
+        jmCadastrar.add(jmCadastrarProgDatas);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jmCadastrar);
 
-        jMenu2.setText("Consultar");
+        jmConsultar.setText("Consultar");
 
-        jMenuItem5.setText("Vôo");
-        jMenu2.add(jMenuItem5);
+        jmConsultarVoo.setText("Vôo");
+        jmConsultar.add(jmConsultarVoo);
 
-        jMenuItem6.setText("Saldo de Pontos");
-        jMenu2.add(jMenuItem6);
+        jmConsultarSaldoPontos.setText("Saldo de Pontos");
+        jmConsultar.add(jmConsultarSaldoPontos);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(jmConsultar);
 
-        jMenu3.setText("Passagem");
+        jmPassagem.setText("Passagem");
 
-        jMenuItem7.setText("Vender");
-        jMenu3.add(jMenuItem7);
+        jmPassagemVender.setText("Vender");
+        jmPassagem.add(jmPassagemVender);
 
-        jMenuItem8.setText("Emitir");
-        jMenu3.add(jMenuItem8);
+        jmPassagemEmitir.setText("Emitir");
+        jmPassagem.add(jmPassagemEmitir);
 
-        jMenuItem9.setText("Cancelar");
-        jMenu3.add(jMenuItem9);
+        jmPassagemCancelar.setText("Cancelar");
+        jmPassagem.add(jmPassagemCancelar);
 
-        jMenuBar1.add(jMenu3);
+        jMenuBar1.add(jmPassagem);
         jMenuBar1.add(jMenu7);
 
-        jMenu5.setText("Sobre a CIA");
-        jMenuBar1.add(jMenu5);
+        jmSobreCia.setText("Sobre a CIA");
+        jMenuBar1.add(jmSobreCia);
 
-        jMenu4.setText("Sair");
-        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
+        jmSair.setText("Sair");
+        jmSair.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu4MouseClicked(evt);
+                jmSairMouseClicked(evt);
             }
         });
-        jMenuBar1.add(jMenu4);
+        jMenuBar1.add(jmSair);
 
         setJMenuBar(jMenuBar1);
 
@@ -125,13 +125,13 @@ public class TelaInicial extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
+    private void jmSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmSairMouseClicked
        
         conexao.desconectar();
         System.exit(0);
-    }//GEN-LAST:event_jMenu4MouseClicked
+    }//GEN-LAST:event_jmSairMouseClicked
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void jmCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmCadastrarClienteActionPerformed
         // TODO add your handling code here:
    // TODO add your handling code here:
         CadastroCliente cadcli = null;
@@ -141,11 +141,11 @@ public class TelaInicial extends javax.swing.JFrame {
             Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
         }
         cadcli.setVisible(true);        
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_jmCadastrarClienteActionPerformed
 
-    private void jMenuItem1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem1MouseClicked
+    private void jmCadastrarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmCadastrarClienteMouseClicked
      
-    }//GEN-LAST:event_jMenuItem1MouseClicked
+    }//GEN-LAST:event_jmCadastrarClienteMouseClicked
 
     public static void main(String args[]) {
          java.awt.EventQueue.invokeLater(new Runnable() {
@@ -156,21 +156,21 @@ public class TelaInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenu jmCadastrar;
+    private javax.swing.JMenuItem jmCadastrarAeronave;
+    private javax.swing.JMenuItem jmCadastrarCliente;
+    private javax.swing.JMenuItem jmCadastrarProgDatas;
+    private javax.swing.JMenuItem jmCadastrarVoo;
+    private javax.swing.JMenu jmConsultar;
+    private javax.swing.JMenuItem jmConsultarSaldoPontos;
+    private javax.swing.JMenuItem jmConsultarVoo;
+    private javax.swing.JMenu jmPassagem;
+    private javax.swing.JMenuItem jmPassagemCancelar;
+    private javax.swing.JMenuItem jmPassagemEmitir;
+    private javax.swing.JMenuItem jmPassagemVender;
+    private javax.swing.JMenu jmSair;
+    private javax.swing.JMenu jmSobreCia;
     // End of variables declaration//GEN-END:variables
 }
