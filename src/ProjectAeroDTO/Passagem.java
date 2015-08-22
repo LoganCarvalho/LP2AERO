@@ -1,20 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ProjectAeroDTO;
 
-/**
- *
- * @author Logan
- */
 public class Passagem {
     
-    private double valor_real;
-    private int valor_pontos;
-    private int cod;
+    double valor_real;
+    int valor_pontos;
+    int cod;
 
+    public Passagem(double valor_real, int valor_pontos, int cod) {
+        this.valor_real = valor_real;
+        this.valor_pontos = valor_pontos;
+        this.cod = cod;
+    }
+  
     public double getValor_real() {
         return valor_real;
     }

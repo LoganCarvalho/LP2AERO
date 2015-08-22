@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ProjectAeroDTO;
 
-/**
- *
- * @author Logan
- */
 public class Programacao {
     
     private String date_chegada;
@@ -16,6 +7,13 @@ public class Programacao {
     private String date_saida;
     private String hora_chegada;
 
+    public Programacao(String date_chegada, String hora_saida, String date_saida, String hora_chegada) {
+        this.date_chegada = date_chegada;
+        this.hora_saida = hora_saida;
+        this.date_saida = date_saida;
+        this.hora_chegada = hora_chegada;
+    }
+    
     public String getDate_chegada() {
         return date_chegada;
     }

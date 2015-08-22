@@ -18,6 +18,12 @@ public class Cliente {
     private String dataNascimento;
     private String CPF;
 
+    public Cliente(String nome, String dataNascimento, String CPF) {
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.CPF = CPF;
+    }
+    
     public String getDataNascimento() {
         return dataNascimento;
     }

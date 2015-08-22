@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ProjectAeroDTO;
 
-/**
- *
- * @author Logan
- */
 public class Aeronave {
     
     private String prefixo;
@@ -16,6 +7,13 @@ public class Aeronave {
     private int qntd_prim_clas;
     private int qntd_clas_econ;
 
+    public Aeronave(String prefixo, int capacidade, int qntd_prim_clas, int qntd_clas_econ) {
+        this.prefixo = prefixo;
+        this.capacidade = capacidade;
+        this.qntd_prim_clas = qntd_prim_clas;
+        this.qntd_clas_econ = qntd_clas_econ;
+    }
+      
     public String getPrefixo() {
         return prefixo;
     }

@@ -1,20 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ProjectAeroDTO;
 
-/**
- *
- * @author Logan
- */
 public class Voo {
     
     private String city_orig;
     private int identificacao;
     private String city_dest;
 
+    public Voo(String city_orig, int identificacao, String city_dest) {
+        this.city_orig = city_orig;
+        this.identificacao = identificacao;
+        this.city_dest = city_dest;
+    }
+    
     public String getCity_orig() {
         return city_orig;
     }
