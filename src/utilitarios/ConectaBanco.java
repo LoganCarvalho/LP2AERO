@@ -27,7 +27,7 @@ public class ConectaBanco {
      try {//Tentativa inicial
          System.setProperty("jdbc.Drivers", driver);//atribui a propriedade do driver de conexão
          conn = DriverManager.getConnection(caminho, usuario, senha);//Realiza a conexão com o BD
-         JOptionPane.showMessageDialog(null,"Conectado com Sucesso");//Imprime caixa de mensagem 
+         //JOptionPane.showMessageDialog(null,"Conectado com Sucesso");//Imprime caixa de mensagem 
      } catch (SQLException ex) {
          JOptionPane.showMessageDialog(null," Erro de conexão\n Erro"+ ex.getMessage() );
      }       

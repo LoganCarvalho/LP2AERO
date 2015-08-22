@@ -63,6 +63,11 @@ public class TelaInicial extends javax.swing.JFrame {
         jmCadastrar.add(jmCadastrarCliente);
 
         jmCadastrarAeronave.setText("Aeronave");
+        jmCadastrarAeronave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmCadastrarAeronaveActionPerformed(evt);
+            }
+        });
         jmCadastrar.add(jmCadastrarAeronave);
 
         jmCadastrarVoo.setText("Voo");
@@ -132,8 +137,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jmSairMouseClicked
 
     private void jmCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmCadastrarClienteActionPerformed
-        // TODO add your handling code here:
-   // TODO add your handling code here:
+       
         CadastroCliente cadcli = null;
         try {
             cadcli = new CadastroCliente();
@@ -146,6 +150,11 @@ public class TelaInicial extends javax.swing.JFrame {
     private void jmCadastrarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmCadastrarClienteMouseClicked
      
     }//GEN-LAST:event_jmCadastrarClienteMouseClicked
+
+    private void jmCadastrarAeronaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmCadastrarAeronaveActionPerformed
+        CadastroAeronave aero = new CadastroAeronave();
+        aero.setVisible(true);
+    }//GEN-LAST:event_jmCadastrarAeronaveActionPerformed
 
     public static void main(String args[]) {
          java.awt.EventQueue.invokeLater(new Runnable() {
