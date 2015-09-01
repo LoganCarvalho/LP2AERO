@@ -1,11 +1,15 @@
 package ProjectAeroDTO;
 
+import java.util.ArrayList;
+
 public class Voo {
     
     private String city_orig;
     private int identificacao;
     private String city_dest;
+    private ArrayList<Programacao> programacao = new ArrayList<Programacao>();
 
+    
     public Voo(String city_orig, int identificacao, String city_dest) {
         this.city_orig = city_orig;
         this.identificacao = identificacao;

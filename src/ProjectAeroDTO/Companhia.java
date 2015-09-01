@@ -1,9 +1,13 @@
 package ProjectAeroDTO;
 
+import java.util.ArrayList;
+
 public class Companhia {
     
     private String cnpj;
     private String nome;
+    private ArrayList<Aeronave> aeronave = new ArrayList<Aeronave>();
+;
 
     public Companhia(String cnpj, String nome) {
         this.cnpj = cnpj;

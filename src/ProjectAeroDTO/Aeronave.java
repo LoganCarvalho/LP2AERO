@@ -1,11 +1,15 @@
 package ProjectAeroDTO;
 
+import java.util.ArrayList;
+
 public class Aeronave {
     
     private String prefixo;
     private int capacidade;
     private int qntd_prim_clas;
     private int qntd_clas_econ;
+    private ArrayList<Voo> voo = new ArrayList<Voo>();
+
 
     public Aeronave(String prefixo, int capacidade, int qntd_prim_clas, int qntd_clas_econ) {
         this.prefixo = prefixo;

@@ -1,11 +1,15 @@
 package ProjectAeroDTO;
 
+import java.util.ArrayList;
+
 public class Programacao {
     
     private String date_chegada;
     private String hora_saida;
     private String date_saida;
     private String hora_chegada;
+    private ArrayList<Passagem> passagem = new ArrayList<Passagem>();
+
 
     public Programacao(String date_chegada, String hora_saida, String date_saida, String hora_chegada) {
         this.date_chegada = date_chegada;
