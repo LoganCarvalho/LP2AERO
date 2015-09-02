@@ -7,6 +7,7 @@ package ProjectAeroDTO;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.util.ArrayList;
 
 /**
  *
@@ -17,6 +18,8 @@ public class Cliente {
     private String nome;
     private String dataNascimento;
     private String CPF;
+    private  ArrayList<Passagem> passagens = new ArrayList<Passagem>();
+
 
     public Cliente(String nome, String dataNascimento, String CPF) {
         this.nome = nome;

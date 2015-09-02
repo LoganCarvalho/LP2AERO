@@ -18,9 +18,7 @@ public class PassagemPrimeiraClasse extends Passagem {
         this.constAdicional = constAdicional;
         this.bebidaAlcolica = bebidaAlcolica;
         this.alimentacao = alimentacao;
-    }
-    
-    
+    } 
 
     public double getConstAdicional() {
         return constAdicional;

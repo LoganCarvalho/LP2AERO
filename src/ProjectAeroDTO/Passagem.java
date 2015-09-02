@@ -2,9 +2,10 @@ package ProjectAeroDTO;
 
 public class Passagem {
     
-    double valor_real;
-    int valor_pontos;
-    int cod;
+   private double valor_real;
+   private int valor_pontos;
+   private int cod;
+   private Programacao progPassagem;
 
     public Passagem(double valor_real, int valor_pontos, int cod) {
         this.valor_real = valor_real;

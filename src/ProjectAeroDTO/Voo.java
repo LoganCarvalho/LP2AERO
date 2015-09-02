@@ -7,8 +7,8 @@ public class Voo {
     private String city_orig;
     private int identificacao;
     private String city_dest;
-    private ArrayList<Programacao> programacao = new ArrayList<Programacao>();
-
+    private ArrayList<Programacao> programacoes = new ArrayList<Programacao>();
+    private ArrayList<Passagem> passagens = new ArrayList<Passagem>();
     
     public Voo(String city_orig, int identificacao, String city_dest) {
         this.city_orig = city_orig;
