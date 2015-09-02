@@ -1,8 +1,7 @@
 package ProjectAeroDTO;
 
 
-public class Cartao {
-       
+public class Cartao {       
     private int Id;
     private int num_Pontos;
 
