@@ -146,8 +146,9 @@ public class CadastroAeronave extends javax.swing.JFrame {
     private void btnCadastroAeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroAeroActionPerformed
           try {
             PreparedStatement pst = conexao.conn.prepareStatement("insert into cliente(nome,cpf) values(?,?)");
-            pst.setString(1, txtNome.getText());
-            pst.setString(2, txtCPF.getText());
+           //comentado devido aos erros
+           // pst.setString(1, txtNome.getText());
+           // pst.setString(2, txtCPF.getText());
                   
             pst.executeUpdate();
             JOptionPane.showMessageDialog(rootPane,"Cliente Cadastrado");//Imprime caixa de mensagem 

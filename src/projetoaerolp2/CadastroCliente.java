@@ -5,7 +5,7 @@
  */
 package projetoaerolp2;
 
-import java.awt.Component;
+import ProjectAeroDTO.Cliente;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.LinkedList;
@@ -99,14 +99,12 @@ public class CadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNomeActionPerformed
 
     private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed
-        //Cliente cli = new Cliente();
+       
         try {
             PreparedStatement pst = conexao.conn.prepareStatement("insert into cliente(nome,cpf) values(?,?)");
             pst.setString(1, txtNome.getText());
             pst.setString(2, txtCPF.getText());
-            //cli = ColetarDadosClienteTela();
-           // pst.setObject(1, cli);
-            
+             
             pst.executeUpdate();
             JOptionPane.showMessageDialog(rootPane,"Cliente Cadastrado");//Imprime caixa de mensagem 
         } catch (SQLException ex) {
@@ -116,18 +114,8 @@ public class CadastroCliente extends javax.swing.JFrame {
         
         //txtNome.requestFocus();
     }//GEN-LAST:event_btnCadastroActionPerformed
-    
-    //Metodo que coleta a informação do popUp de cliente(Seguir Padrão)
-    private Cliente ColetarDadosClienteTela(){
-       
-        Cliente cli = new Cliente();
-        cli.setNome(txtNome.getText());
-        cli.setCPF(txtCPF.getText());
-        
-        
-        return cli;
-    }
-    
+
+     
     /**
      * @param args the command line arguments
      */
