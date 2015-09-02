@@ -5,6 +5,8 @@ public class Cartao {
        
     private int Id;
     private int num_Pontos;
+    
+    //Modificação dentro de cartao. Testando Pull and Push. Apague isso aqui pra fazer o teste
 
     public Cartao(int Id, int num_Pontos) {
         this.Id = Id;
