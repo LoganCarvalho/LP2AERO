@@ -8,7 +8,7 @@ package interfaces;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import utilitarios.ConectaBanco;
+import Banco.ConectaBanco;
 
 /**
  *

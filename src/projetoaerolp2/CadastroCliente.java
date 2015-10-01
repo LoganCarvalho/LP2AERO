@@ -12,7 +12,7 @@ import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import utilitarios.ConectaBanco;
+import Banco.ConectaBanco;
 
 public class CadastroCliente extends javax.swing.JFrame {
     ConectaBanco conexao = new ConectaBanco();//variavel global

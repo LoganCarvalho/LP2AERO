@@ -8,7 +8,7 @@ package interfaces;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import projetoaerolp2.CadastroCliente;
-import utilitarios.ConectaBanco;
+import Banco.ConectaBanco;
 
 /**
  *
