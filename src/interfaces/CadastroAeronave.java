@@ -15,10 +15,9 @@ import Banco.ConectaBanco;
  * @author Stephanie
  */
 public class CadastroAeronave extends javax.swing.JFrame {
-    ConectaBanco conexao = new ConectaBanco();//variavel global
 
     public CadastroAeronave() {
-        conexao.conectar();
+
         initComponents();
     }
 
@@ -139,17 +138,7 @@ public class CadastroAeronave extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCadastroAeroMouseClicked
 
     private void btnCadastroAeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroAeroActionPerformed
-          try {
-            PreparedStatement pst = conexao.conn.prepareStatement("insert into cliente(nome,cpf) values(?,?)");
-           //comentado devido aos erros
-           // pst.setString(1, txtNome.getText());
-           // pst.setString(2, txtCPF.getText());
-                  
-            pst.executeUpdate();
-            JOptionPane.showMessageDialog(rootPane,"Cliente Cadastrado");//Imprime caixa de mensagem 
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(rootPane,"Erro na hora de inserir. Tente Novamente!\n Erro" +ex);//Imprime caixa de mensagem 
-        }
+
     }//GEN-LAST:event_btnCadastroAeroActionPerformed
 
     /**

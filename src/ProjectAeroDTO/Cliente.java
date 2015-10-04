@@ -5,6 +5,7 @@
  */
 package ProjectAeroDTO;
 
+import Banco.ClienteDAO;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
@@ -14,19 +15,18 @@ import java.util.ArrayList;
  * @author Logan CARVALHO
  */
 public class Cliente {
-    
+
     private String nome;
     private String dataNascimento;
     private String CPF;
-    private  ArrayList<Passagem> passagens = new ArrayList<Passagem>();
-
+    private ArrayList<Passagem> passagens = new ArrayList<Passagem>();
 
     public Cliente(String nome, String dataNascimento, String CPF) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
         this.CPF = CPF;
     }
-    
+
     public String getDataNascimento() {
         return dataNascimento;
     }
@@ -57,8 +57,6 @@ public class Cliente {
         propertyChangeSupport.removePropertyChangeListener(listener);
     }
 
-    
-
     public static final String PROP_CPF = "CPF";
 
     public String getCPF() {
@@ -71,5 +69,11 @@ public class Cliente {
         propertyChangeSupport.firePropertyChange(PROP_CPF, oldCPF, CPF);
     }
 
-    
+    public int incluir() {
+
+        ClienteDAO cli = new ClienteDAO();
+        int resposta = cli.incluir(this);
+        return resposta;
+    }
+
 }

@@ -7,7 +7,6 @@ package interfaces;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import projetoaerolp2.CadastroCliente;
 import Banco.ConectaBanco;
 
 /**
@@ -20,7 +19,6 @@ public class TelaInicial extends javax.swing.JFrame {
 
     public TelaInicial() {
         initComponents();
-        conexao.conectar();
     }
 
     @SuppressWarnings("unchecked")
@@ -131,24 +129,23 @@ public class TelaInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmSairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmSairMouseClicked
-       
-        conexao.desconectar();
+
         System.exit(0);
     }//GEN-LAST:event_jmSairMouseClicked
 
     private void jmCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmCadastrarClienteActionPerformed
-       
+
         CadastroCliente cadcli = null;
         try {
             cadcli = new CadastroCliente();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
         }
-        cadcli.setVisible(true);        
+        cadcli.setVisible(true);
     }//GEN-LAST:event_jmCadastrarClienteActionPerformed
 
     private void jmCadastrarClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmCadastrarClienteMouseClicked
-     
+
     }//GEN-LAST:event_jmCadastrarClienteMouseClicked
 
     private void jmCadastrarAeronaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmCadastrarAeronaveActionPerformed
@@ -157,7 +154,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jmCadastrarAeronaveActionPerformed
 
     public static void main(String args[]) {
-         java.awt.EventQueue.invokeLater(new Runnable() {
+        java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TelaInicial().setVisible(true);
             }

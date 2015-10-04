@@ -10,45 +10,34 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Logan
+ * @author Logan e Stephanie
  */
-
-
-
 public class ConectaBanco {
- public Statement stm;//reponsável por preparar e realizar pesquisas no BD
- public ResultSet rs;//reponsável por armazenar o resultado de uma pesquisa passada para o statement
- private static final  String driver = "com.mysql.jdbc.Driver";//responsavel por identificar o serviço de banco de dados
- private static final  String caminho = "jdbc:mysql://localhost:5432/lp2";//responsável por atribuir o local do BD. java database connection do tipo postgre
- private static final String usuario= "root";//configurados durante a instalação do banco
- private static final String senha = "123456";
 
-    
- public static Connection getConnection(){
- 
- Connection conexao = null;
-     try {
-         Class.forName(driver).newInstance();//atribui a propriedade do driver de conexão
-         conexao = DriverManager.getConnection(caminho, usuario, senha);//Realiza a conexão com o BD
-     } 
-     
-     catch (SQLException error) {
-         System.out.println("Erro, verifique sua conexão com o banco!");
-     }
- 
- 
- finally{
- return conexao;
-     }
- }   
- 
- 
- public void desconectar(){//Método para fechar a conexão com o BD
-     try {
-         conexao.close();
-         JOptionPane.showMessageDialog(null,"Desconectado com Sucesso");//Imprime caixa de mensagem 
-     } catch (SQLException ex) {
-           JOptionPane.showMessageDialog(null," Erro ao fechar a conexão\n Erro"+ ex.getMessage() );
-     }
- }
+    private static final String driver = "com.mysql.jdbc.Driver";//responsavel por identificar o serviço de banco de dados
+    private static final String caminho = "jdbc:mysql://localhost";//responsável por atribuir o local do BD. java database connection do tipo postgre
+    private static final String usuario = "root";//configurados durante a instalação do banco
+    private static final String senha = "123456";
+
+    public static Connection getConnection() {
+
+        Connection conexao = null;
+        try {
+            Class.forName(driver).newInstance();//atribui a propriedade do driver de conexão
+            conexao = DriverManager.getConnection(caminho, usuario, senha);//Realiza a conexão com o BD
+        } catch (SQLException error) {
+            System.out.println("erro, verifique se o driver foi incluido como biblioteca do projeto");
+        } finally {
+            return conexao;
+        }
+    }
+
+    public void desconectar(Connection conexao) {//Método para fechar a conexão com o BD
+        try {
+            conexao.close();
+            JOptionPane.showMessageDialog(null, "Desconectado com Sucesso");//Imprime caixa de mensagem 
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, " Erro ao fechar a conexão\n Erro" + ex.getMessage());
+        }
+    }
 }

@@ -8,22 +8,29 @@ package Banco;
 import ProjectAeroDTO.Cliente;
 import java.sql.Statement;
 import java.sql.Connection;
+import java.sql.SQLException;
 
 /**
  *
- * @author Logan
+ * @author Logan e Stephanie
  */
 public class ClienteDAO {
-    
-    public void incluir (Cliente cliente){
-    
-    
+
+    public int incluir(Cliente cliente) {
+
         Connection conexao = ConectaBanco.getConnection();
-        Statement sentence = conexao.createStatement();
-        String sql= "insert into banco.tabela values ("+cliente.get+,")";
-        int reposta = sentence.executeUpdate(sql);
-        
-        
+        int resposta = 0;
+        try {
+            Statement sentence = conexao.createStatement();
+            String sql = "insert into bd_cia_aerea.cliente "
+                    + "(nome, cpf,data_nasc) "
+                    + "values(" + cliente.getNome() + ",'" + cliente.getCPF() + "','" + cliente.getDataNascimento() + "')";
+            resposta = sentence.executeUpdate(sql);
+        } catch (SQLException error) {
+        } finally {
+            return resposta;
+        }
+
     }
-    
+
 }

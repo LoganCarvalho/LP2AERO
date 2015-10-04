@@ -1,5 +1,5 @@
 
-package projetoaerolp2;
+package MainAero;
 
 import interfaces.TelaInicial;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
