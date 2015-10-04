@@ -117,14 +117,14 @@ public class TelaInicial extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 379, Short.MAX_VALUE)
+            .addGap(0, 333, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGap(0, 315, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(800, 600));
+        setSize(new java.awt.Dimension(349, 374));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

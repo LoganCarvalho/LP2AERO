@@ -31,20 +31,22 @@
                   <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" alignment="0" min="-2" pref="143" max="-2" attributes="0"/>
+                  <Component id="lblVoo" min="-2" pref="38" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="49" max="32767" attributes="0"/>
+              <EmptySpace pref="42" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jTextFieldCapacidade" min="-2" pref="72" max="-2" attributes="0"/>
                   <Component id="jTextFieldPrefixo" min="-2" pref="137" max="-2" attributes="0"/>
                   <Component id="jTextFieldQntd1" min="-2" pref="72" max="-2" attributes="0"/>
-                  <Component id="jTextFieldQntd2" alignment="0" min="-2" pref="119" max="-2" attributes="0"/>
+                  <Component id="jTextFieldQntd2" min="-2" pref="72" max="-2" attributes="0"/>
+                  <Component id="jCheckBoxVoo" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Component id="btnCadastroAero" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -71,9 +73,14 @@
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldQntd2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="64" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblVoo" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="jCheckBoxVoo" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="27" max="32767" attributes="0"/>
               <Component id="btnCadastroAero" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -121,6 +128,16 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnCadastroAeroMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCadastroAeroActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblVoo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Voo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jCheckBoxVoo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Voo F3"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
