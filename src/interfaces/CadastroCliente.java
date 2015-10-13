@@ -18,7 +18,7 @@ public class CadastroCliente extends javax.swing.JFrame {
 
     ConectaBanco conexao = new ConectaBanco();//variavel global
 
-    public CadastroCliente() throws ClassNotFoundException {
+    public CadastroCliente()  {
         initComponents();
 
     }
@@ -178,11 +178,11 @@ public class CadastroCliente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    new CadastroCliente().setVisible(true);
-                } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(CadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                //try {
+                  //  new CadastroCliente().setVisible(true);
+                //} catch (ClassNotFoundException ex) {
+                    //Logger.getLogger(CadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
+                //}
             }
         });
     }
