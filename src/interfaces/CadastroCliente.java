@@ -18,7 +18,7 @@ public class CadastroCliente extends javax.swing.JFrame {
 
     ConectaBanco conexao = new ConectaBanco();//variavel global
 
-    public CadastroCliente()  {
+    public CadastroCliente() throws ClassNotFoundException {
         initComponents();
 
     }
@@ -37,6 +37,8 @@ public class CadastroCliente extends javax.swing.JFrame {
         txtDataNascimento = new javax.swing.JTextField();
         lblNumeroPontos = new javax.swing.JLabel();
         txtNumeroPontos = new javax.swing.JTextField();
+        jButtonAlterar = new javax.swing.JButton();
+        jButtonExcluir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Clientes");
@@ -75,6 +77,20 @@ public class CadastroCliente extends javax.swing.JFrame {
             }
         });
 
+        jButtonAlterar.setText("Alterar");
+        jButtonAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAlterarActionPerformed(evt);
+            }
+        });
+
+        jButtonExcluir.setText("Excluir");
+        jButtonExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExcluirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -106,6 +122,10 @@ public class CadastroCliente extends javax.swing.JFrame {
                         .addGap(0, 20, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButtonExcluir)
+                        .addGap(37, 37, 37)
+                        .addComponent(jButtonAlterar)
+                        .addGap(18, 18, 18)
                         .addComponent(btnCadastro)))
                 .addContainerGap())
         );
@@ -132,7 +152,10 @@ public class CadastroCliente extends javax.swing.JFrame {
                     .addComponent(lblNumeroPontos, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNumeroPontos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addComponent(btnCadastro)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCadastro)
+                    .addComponent(jButtonAlterar)
+                    .addComponent(jButtonExcluir))
                 .addGap(41, 41, 41))
         );
 
@@ -146,19 +169,18 @@ public class CadastroCliente extends javax.swing.JFrame {
 
     private void btnCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroActionPerformed
         Cliente cli;
-        String nome, dataNasc, cpf;
+        String nome, cpf, dataNasc;
         nome = txtNome.getText();
+        cpf = txtCPF.getText();    
         dataNasc = txtDataNascimento.getText();
-        cpf = txtCPF.getText();
-
-        cli = new Cliente(nome, dataNasc, cpf);
-        int resposta = cli.incluir();
-        if (resposta > 0) {
-            JOptionPane.showMessageDialog(null, "Incluido com sucesso");
-        } else {
-            JOptionPane.showMessageDialog(null, "Erro na inclusao!");
-        }
         
+        cli = new Cliente(nome, cpf, dataNasc);
+        int resposta = cli.incluir();
+        if (resposta>0) 
+            JOptionPane.showMessageDialog(null, "Incluido com sucesso");
+         else 
+            JOptionPane.showMessageDialog(null, "Erro na inclusao!");
+       
     }//GEN-LAST:event_btnCadastroActionPerformed
 
     private void txtDataNascimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDataNascimentoActionPerformed
@@ -169,6 +191,37 @@ public class CadastroCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNumeroPontosActionPerformed
 
+    private void jButtonAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAlterarActionPerformed
+        Cliente cli;
+        String nome, cpf, dataNasc;
+        nome = txtNome.getText();
+        cpf = txtCPF.getText();    
+        dataNasc = txtDataNascimento.getText();
+        
+        cli = new Cliente(nome, cpf, dataNasc);
+        int resposta = cli.alterar();
+        if (resposta>0) 
+            JOptionPane.showMessageDialog(null, "Alterado com sucesso");
+         else 
+            JOptionPane.showMessageDialog(null, "Erro na alteração!");
+       
+    }//GEN-LAST:event_jButtonAlterarActionPerformed
+
+    private void jButtonExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirActionPerformed
+        Cliente cli;
+        String nome, cpf, dataNasc;
+        nome = txtNome.getText();
+        cpf = txtCPF.getText();    
+        dataNasc = txtDataNascimento.getText();
+        
+        cli = new Cliente(nome, cpf, dataNasc);
+        int resposta = cli.excluir();
+        if (resposta>0) 
+            JOptionPane.showMessageDialog(null, "Excluído com sucesso");
+         else 
+            JOptionPane.showMessageDialog(null, "Erro na exclusão!");
+    }//GEN-LAST:event_jButtonExcluirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -178,17 +231,19 @@ public class CadastroCliente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //try {
-                  //  new CadastroCliente().setVisible(true);
-                //} catch (ClassNotFoundException ex) {
-                    //Logger.getLogger(CadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
-                //}
+                try {
+                    new CadastroCliente().setVisible(true);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(CadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastro;
+    private javax.swing.JButton jButtonAlterar;
+    private javax.swing.JButton jButtonExcluir;
     private javax.swing.JLabel lblCPF;
     private javax.swing.JLabel lblDataNascimento;
     private javax.swing.JLabel lblNome;
