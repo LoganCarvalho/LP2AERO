@@ -75,5 +75,19 @@ public class Cliente {
         int resposta = cli.incluir(this);
         return resposta;
     }
+    
+      public int alterar() {
+
+        ClienteDAO cli = new ClienteDAO();
+        int resposta = cli.alterar(this);
+        return resposta;
+    }
+      
+      public int excluir() {
+
+        ClienteDAO cli = new ClienteDAO();
+        int resposta = cli.excluir(this);
+        return resposta;
+    }
 
 }
