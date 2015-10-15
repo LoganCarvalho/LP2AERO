@@ -23,7 +23,7 @@ public class ClienteDAO {
         int resposta = 0;
         try {
             Statement sentence = conexao.createStatement();
-            String sql = "insert into cia_aerea.cliente "+
+            String sql = "insert into AeroSystem.Cliente "+
                      "(nome,dt_nascimento, cpf) "+
                      "values('" + cliente.getNome() + "','" + cliente.getCPF() + "','" + cliente.getDataNascimento() + "')";
             resposta = sentence.executeUpdate(sql);
@@ -44,7 +44,7 @@ public class ClienteDAO {
         int resposta = 0;
         try {
             Statement sentence = conexao.createStatement();
-             String sql = "update cia_aerea.cliente "+
+             String sql = "update AeroSystem.Cliente "+
                      "set nome='"+cliente.getNome()+ "',dt_nascimento='"+cliente.getDataNascimento()+ "',cpf='" +cliente.getCPF()+"' "+
                      "where idCliente = 1";
             resposta = sentence.executeUpdate(sql);
@@ -64,7 +64,7 @@ public class ClienteDAO {
       int resposta=0;
       try{
       Statement sentenca = conexao.createStatement();
-      String sql = "delete from cia_aerea.cliente "+
+      String sql = "delete from AeroSystem.Cliente "+
                    "where idCliente = 1";
       resposta = sentenca.executeUpdate(sql);
       }catch(SQLException erro){

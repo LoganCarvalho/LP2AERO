@@ -17,7 +17,7 @@ public class ConectaBanco {
     private static final String driver = "com.mysql.jdbc.Driver";//responsavel por identificar o serviço de banco de dados
     private static final String caminho = "jdbc:mysql://localhost";//responsável por atribuir o local do BD. java database connection do tipo postgre
     private static final String usuario = "root";//configurados durante a instalação do banco
-    private static final String senha = "123456";
+    private static final String senha = "";
 
     public static Connection getConnection() {
 
