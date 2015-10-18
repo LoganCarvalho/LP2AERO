@@ -8,6 +8,7 @@ package Banco;
 import ProjectAeroDTO.Cliente;
 import java.sql.Statement;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -23,7 +24,7 @@ public class ClienteDAO {
         int resposta = 0;
         try {
             Statement sentence = conexao.createStatement();
-            String sql = "insert into AeroSystem.Cliente "+
+            String sql = "insert into projeto_aereo.cliente "+
                      "(nome,dt_nascimento, cpf) "+
                      "values('" + cliente.getNome() + "','" + cliente.getCPF() + "','" + cliente.getDataNascimento() + "')";
             resposta = sentence.executeUpdate(sql);
@@ -72,6 +73,30 @@ public class ClienteDAO {
       }
       finally{
           return resposta;
+      }
+  }
+     
+     public boolean consultar (Cliente cliente){
+      Connection conexao = ConectaBanco.getConnection();
+      ResultSet resposta=null;
+      boolean ok=false;
+      try{
+      Statement sentenca = conexao.createStatement();
+      String sql = "select nome, cpf, dt_nascimento from projeto_aereo.cliente "+
+                   "where cpf=" +"'" + cliente.getCPF() + "'";
+      resposta = sentenca.executeQuery(sql);
+      while (resposta.next()){
+          cliente.setNome(resposta.getString("nome"));
+          cliente.setCPF(resposta.getString("cpf"));
+          cliente.setDataNascimento(resposta.getString("dt_nascimento"));
+          
+          ok=true;
+      }
+      }catch(SQLException erro){
+          
+      }
+      finally{
+          return ok;
       }
   }
 

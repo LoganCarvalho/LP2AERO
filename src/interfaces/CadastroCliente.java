@@ -15,10 +15,10 @@ import javax.swing.JOptionPane;
 import Banco.ConectaBanco;
 
 public class CadastroCliente extends javax.swing.JFrame {
-
+//adicionando comentario para testar
     ConectaBanco conexao = new ConectaBanco();//variavel global
 
-    public CadastroCliente() throws ClassNotFoundException {
+    public CadastroCliente() {
         initComponents();
 
     }
@@ -39,6 +39,7 @@ public class CadastroCliente extends javax.swing.JFrame {
         txtNumeroPontos = new javax.swing.JTextField();
         jButtonAlterar = new javax.swing.JButton();
         jButtonExcluir = new javax.swing.JButton();
+        jButtonCosultar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Clientes");
@@ -78,16 +79,18 @@ public class CadastroCliente extends javax.swing.JFrame {
         });
 
         jButtonAlterar.setText("Alterar");
-        jButtonAlterar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAlterarActionPerformed(evt);
-            }
-        });
 
         jButtonExcluir.setText("Excluir");
         jButtonExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonExcluirActionPerformed(evt);
+            }
+        });
+
+        jButtonCosultar.setText("Consultar");
+        jButtonCosultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCosultarActionPerformed(evt);
             }
         });
 
@@ -112,9 +115,11 @@ public class CadastroCliente extends javax.swing.JFrame {
                                         .addGap(70, 70, 70)
                                         .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(lblDataNascimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(lblNumeroPontos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jButtonCosultar)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(lblDataNascimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(lblNumeroPontos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                         .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(txtDataNascimento, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
@@ -123,7 +128,7 @@ public class CadastroCliente extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButtonExcluir)
-                        .addGap(37, 37, 37)
+                        .addGap(15, 15, 15)
                         .addComponent(jButtonAlterar)
                         .addGap(18, 18, 18)
                         .addComponent(btnCadastro)))
@@ -152,10 +157,13 @@ public class CadastroCliente extends javax.swing.JFrame {
                     .addComponent(lblNumeroPontos, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNumeroPontos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCadastro)
-                    .addComponent(jButtonAlterar)
-                    .addComponent(jButtonExcluir))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButtonExcluir)
+                        .addComponent(jButtonCosultar))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnCadastro)
+                        .addComponent(jButtonAlterar)))
                 .addGap(41, 41, 41))
         );
 
@@ -222,6 +230,26 @@ public class CadastroCliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro na exclusão!");
     }//GEN-LAST:event_jButtonExcluirActionPerformed
 
+    private void jButtonCosultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCosultarActionPerformed
+        // TODO add your handling code here:
+        
+        Cliente cli;
+        String cpf;   
+        cpf = txtCPF.getText();
+        cli = new Cliente(cpf);
+        
+        boolean resposta = cli.consultar();
+        if (resposta)
+        {
+            txtNome.setText(cli.getNome());
+            txtDataNascimento.setText(cli.getDataNascimento());
+            txtCPF.setText(cli.getCPF());
+            //bloquear cpf
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Erro na consulta");
+    }//GEN-LAST:event_jButtonCosultarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -231,11 +259,11 @@ public class CadastroCliente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    new CadastroCliente().setVisible(true);
-                } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(CadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                //try {
+                   // new CadastroCliente().setVisible(true);
+                //} catch (ClassNotFoundException ex) {
+                 //   Logger.getLogger(CadastroCliente.class.getName()).log(Level.SEVERE, null, ex);
+                //}
             }
         });
     }
@@ -243,6 +271,7 @@ public class CadastroCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastro;
     private javax.swing.JButton jButtonAlterar;
+    private javax.swing.JButton jButtonCosultar;
     private javax.swing.JButton jButtonExcluir;
     private javax.swing.JLabel lblCPF;
     private javax.swing.JLabel lblDataNascimento;

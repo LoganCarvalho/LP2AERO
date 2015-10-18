@@ -135,12 +135,8 @@ public class TelaInicial extends javax.swing.JFrame {
 
     private void jmCadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmCadastrarClienteActionPerformed
 
-        CadastroCliente cadcli = null;
-        try {
-            cadcli = new CadastroCliente();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(TelaInicial.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        CadastroCliente cadcli = new CadastroCliente();
+       
         cadcli.setVisible(true);
     }//GEN-LAST:event_jmCadastrarClienteActionPerformed
 

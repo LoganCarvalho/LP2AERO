@@ -26,6 +26,10 @@ public class Cliente {
         this.dataNascimento = dataNascimento;
         this.CPF = CPF;
     }
+    
+     public Cliente(String CPF) {
+        this.CPF = CPF;
+    }
 
     public String getDataNascimento() {
         return dataNascimento;
@@ -89,5 +93,12 @@ public class Cliente {
         int resposta = cli.excluir(this);
         return resposta;
     }
+      
+      public boolean consultar(){
+      
+        ClienteDAO cli = new ClienteDAO();
+        boolean resposta = cli.consultar(this);
+        return resposta;
+  }
 
 }
